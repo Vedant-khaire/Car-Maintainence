@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Predictive Maintainence</title>
+  <style>
+    .container {
+      text-align: center;
+      background-image: url('https://media-ae.cars24.com/blog/uploads/2023/02/shutterstock_771184300-1.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      align-items: 20px left;
+      padding-right: 50px;
+    }
+
+    h1 {
+      font-size: 32px;
+      color: #fff;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+    }
+
+    @media only screen and (max-width: 768px) {
+  .container {
+    padding-right: 10px;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+
+  .button {
+    font-size: 14px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Predictive Maintainence</h1>
+
+    <!-- Registration and Login Form -->
+    <div id="forms">
+      <button id="register-button" class="button">Register</button>
+      <button id="login-button" class="button">Login</button>
+    </div>
+  </div>
+
+  <script>
+    // Event listener for the register button
+    document.getElementById("register-button").addEventListener("click", function() {
+      window.location.href = "register.html";
+    });
+
+    // Event listener for the login button
+    document.getElementById("login-button").addEventListener("click", function() {
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>

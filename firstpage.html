@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .header {
+      background-color: #932121;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    .car-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+    }
+
+    .car-card {
+      width: 300px;
+      margin: 20px;
+      padding: 10px;
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      box-shadow: 4px 4px 8px #d9d9d9,
+                  -4px -4px 8px #ffffff;
+      transition: transform 0.2s;
+    }
+
+    .car-card:hover {
+      transform: translate(2px, 2px);
+    }
+
+    .car-card:active {
+      transform: translate(0px, 0px);
+      box-shadow: inset 2px 2px 4px #d9d9d9,
+                  inset -2px -2px 4px #ffffff;
+    }
+
+    .car-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .car-details {
+      margin-top: 10px;
+    }
+
+    .car-name {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .car-engine {
+      font-size: 14px;
+      color: #888;
+    }
+
+    .car-history {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .car-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .car-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .car-details {
+      position: absolute;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100%;
+      background-color: #f0f0f0;
+      padding: 20px;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      transition: right 0.5s;
+    }
+
+    .car-card:hover .car-details {
+      right: 0;
+    }
+
+    .car-name {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .car-engine {
+      font-size: 14px;
+      color: #888;
+    }
+
+    .car-history {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .scroll-down {
+      text-align: center;
+      margin-top: 30px;
+      animation: moveUpDown 1.5s infinite;
+    }
+
+    @keyframes moveUpDown {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      50% {
+        transform: translateY(10px);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .neumorphic-button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      box-shadow: 4px 4px 8px #d9d9d9,
+                  -4px -4px 8px #ffffff;
+      transition: transform 0.2s;
+    }
+
+    .neumorphic-button:hover {
+      transform: translate(2px, 2px);
+    }
+
+    .neumorphic-button:active {
+      transform: translate(0px, 0px);
+      box-shadow: inset 2px 2px 4px #d9d9d9,
+                  inset -2px -2px 4px #ffffff;
+    }
+
+    .linked-pages {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s;
+      transform: translateY(100%);
+    }
+
+    .linked-pages.show {
+      transform: translateY(0);
+    }
+
+    .linked-page {
+      margin: 0 10px;
+    }
+
+    .linked-page a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .linked-page a:hover {
+      color: #ccc;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .advertise-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 200px;
+      height: 50px;
+      border-radius: 25px;
+      background-color: #f0f0f0;
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1),
+                  -4px -4px 10px rgba(255, 255, 255, 0.5);
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    } 
+
+    .advertise-button:hover {
+      transform: translateY(2px);
+      box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15),
+                  -3px -3px 8px rgba(255, 255, 255, 0.7);
+    }
+
+    .linked-pages {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+    transform: translateY(100%);
+  }
+
+  .linked-pages.show {
+    transform: translateY(0);
+  }
+
+  .linked-page {
+    margin: 0 10px;
+  }
+
+  .linked-page a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .linked-page a:hover {
+    color: #ccc;
+  }  
+
+
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Car Details</h1>
+  </div>
+
+  <div class="car-container">
+    <div class="car-card">
+      <img src="car1.jpg" alt="Car 1" class="car-image" onclick="toggleCarDetails(1)">
+      <div class="car-details" id="carDetails1">
+        <h2 class="car-name">Car 1</h2>
+        <p class="car-engine">Engine: V8</p>
+        <p class="car-history">History: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <!-- Additional details go here -->
+      </div>
+    </div>
+
+    <div class="car-card">
+      <img src="car 3.jpg" alt="Car 2" class="car-image" onclick="toggleCarDetails(2)">
+      <div class="car-details" id="carDetails2">
+        <h2 class="car-name">Car 2</h2>
+        <p class="car-engine">Engine: V6</p>
+        <p class="car-history">History: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <!-- Additional details go here -->
+      </div>
+    </div>
+  </div>
+
+  <div class="car-container">
+    <div class="car-card">
+      <img class="car-image" src="car1.jpg" alt="Car 1">
+      <div class="car-details">
+        <div class="car-name">Car 1</div>
+        <div class="car-engine">Engine: V8 5.0L</div><br>
+        <div class="car-history">Lorem ipsum dolor .</div>
+      </div>
+    </div>
+
+    <div class="car-card">
+      <img class="car-image" src="car 3.jpg" alt="Car 2">
+      <div class="car-details">
+        <div class="car-name">Car 2</div>
+        <div class="car-engine">Engine: V6 3.5L</div><br>
+        <div class="car-history">vulputate fermentum </div>
+      </div>
+    </div>
+
+    <div class="car-card">
+      <img class="car-image" src="car 3.jpg" alt="Car 2">
+      <div class="car-details">
+        <div class="car-name">Car 2</div>
+        <div class="car-engine">Engine: V6 3.5L</div>
+        <div class="car-history">Lorem ipsum dolor sit amet.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="car-container">
+    <div class="car-card">
+      <img src="car1.jpg" alt="Car 1" class="car-image" onclick="toggleCarDetails(1)">
+      <div class="car-details" id="carDetails1">
+        <h2 class="car-name">Car 1</h2>
+        <p class="car-engine">Engine: V8</p>
+        <p class="car-history">History: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <!-- Additional details go here -->
+      </div>
+    </div>
+
+    <div class="car-card">
+      <img src="car 3.jpg" alt="Car 2" class="car-image" onclick="toggleCarDetails(2)">
+      <div class="car-details" id="carDetails2">
+        <h2 class="car-name">Car 2</h2>
+        <p class="car-engine">Engine: V6</p>
+        <p class="car-history">History: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <!-- Additional details go here -->
+      </div>
+    </div>
+  </div>
+
+
+  <h2>Other Options</h2>
+
+  <div class="button-container">
+    <div class="advertise-button" onclick="openAdvertisePage()">Advertise</div>
+    <div class="advertise-button" onclick="openMaintanencePage()">maintanence</div>
+    <div class="advertise-button" onclick="openConnectionPage()">connection</div>
+    <div class="advertise-button" onclick="openPrecaustionPage()">precaution</div>
+  </div> <br><br>
+
+  <script>
+    function toggleCarDetails(carId) {
+      var carDetails = document.getElementById(`carDetails${carId}`);
+      carDetails.style.right = carDetails.style.right === '0px' ? '-300px' : '0px';
+    }
+
+    function openAdvertisePage(advertisement) {
+      window.location.href = 'advertise.html';
+    }
+
+    function openMaintenancePage(maintenance) {
+      window.location. href = 'maintenance.html' ; 
+    }
+
+    function openConnectionPage(connection) {
+      window.location.href = 'connection.html';
+    }
+
+    function openPrecaustionPage(precaustion) {
+      window.location.href = 'Precautions.html';
+    }
+
+ function toggleCarDetails(carId) {
+      var carDetails = document.getElementById(`carDetails${carId}`);
+      carDetails.style.right = carDetails.style.right === '0px' ? '-300px' : '0px';
+    }
+  </script>
+</body>
+</html>

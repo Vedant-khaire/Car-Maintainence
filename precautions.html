@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car Maintenance Website - Precautions</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #111;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+    }
+
+    .header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #333;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #555;
+    }
+
+    .footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .footer span {
+      display: inline-block;
+      white-space: nowrap;
+      animation: moveLeft 10s linear infinite;
+    }
+
+    @keyframes moveLeft {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    /* Precautions Page Styles */
+    h2 {
+      color: #f39c12;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 10px 0;
+    }
+
+    
+ /* RGB Lights Background for Image */
+.circle-container {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
+  position: relative;
+}
+
+.circle-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  transition: transform 1s ease-in-out;
+  animation: blinkLights 3s infinite;
+  position: absolute;
+  z-index: 1;
+}
+
+.circle-container:hover .circle-photo {
+  transform: scale(1.2);
+}
+
+@keyframes blinkLights {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
+                0 0 20px rgba(0, 255, 0, 0.8),
+                0 0 30px rgba(0, 0, 255, 0.8),
+                0 0 40px rgba(255, 255, 0, 0.8);
+  }
+  25% {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
+                0 0 20px rgba(0, 255, 0, 0.8),
+                0 0 30px rgba(0, 0, 255, 0.8),
+                0 0 40px rgba(255, 255, 0, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
+                0 0 20px rgba(0, 255, 0, 0.8),
+                0 0 30px rgba(0, 0, 255, 0.8),
+                0 0 40px rgba(255, 255, 0, 0.8);
+  }
+  75% {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
+                0 0 20px rgba(0, 255, 0, 0.8),
+                0 0 30px rgba(0, 0, 255, 0.8),
+                0 0 40px rgba(255, 255, 0, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
+                0 0 20px rgba(0, 255, 0, 0.8),
+                0 0 30px rgba(0, 0, 255, 0.8),
+                0 0 40px rgba(255, 255, 0, 0.8);
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Welcome to the Car Maintenance Website</h1>
+  </header>
+
+  <div class="container">
+    <h2>Precautions</h2>
+    <p>Here are some precautions to keep in mind for car maintenance:</p>
+    <ul>
+      <li>Regularly check tire pressure and tread depth.</li>
+      <li>Change the engine oil and filter as per the manufacturer's recommendations.</li>
+      <li>Inspect and replace worn-out brake pads and rotors.</li>
+      <li>Keep the car clean, both inside and outside, to prevent damage and corrosion.</li>
+      <li>Check and replace the air filter regularly for proper engine performance.</li>
+      <li>Ensure proper fluid levels for the engine coolant, brake fluid, and transmission fluid.</li>
+    </ul>
+
+    <a href="advertise.html">
+      <div class="circle-container">
+        <img class="circle-photo" src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Car Photo">
+      </div>
+    </a>
+  </div>
+
+  <footer class="footer">
+    <span>© 2024 Car Maintenance Website. All rights reserved.</span>
+  </footer><br><br>
+</body>
+</html>

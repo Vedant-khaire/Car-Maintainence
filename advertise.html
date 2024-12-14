@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car Maintenance Website - Advertise</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #555;
+    }
+
+    .footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* Advertise Page Styles */
+    .card {
+      width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 0, 0, 0.1); /* Red background with transparency */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .card:hover {
+      transform: scale(1.1);
+    }
+
+    .advertisement {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .advertisement img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .advertisement img:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Welcome to the Car Maintenance Website</h1>
+  </header>
+
+  <div class="container">
+    <h2>Advertise</h2>
+    <p>Do Check Our new website.</p>
+    <p>Click on the image below:</p>
+    
+    <div class="card">
+      <div class="advertisement">
+        <img class="advertise-photo" id="advertisementImage" src="C:\Users\khair\OneDrive\Documents\2.my projects\predictive maintanence\new web\crop2.jpg" alt="Advertisement">
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    &copy; 2024 Car Maintenance Website. All rights reserved.
+  </footer>
+
+  <script>
+    // JavaScript code for advertise.html
+    var advertisementImage = document.getElementById("advertisementImage");
+    advertisementImage.addEventListener("click", function() {
+      window.location.href = "maintenance.html";
+    });
+  </script>
+</body>
+</html>

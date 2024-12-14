@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Maintenance Mode</title>
+  <style>
+    body {
+      background-image: url('https://img.freepik.com/premium-photo/d-render-sports-car-with-lights-goes-camera-black-background_161488-1059.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 8px;
+      border: 5px solid #FFD700; /* Gold border */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #FF6347; /* Tomato color */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow */
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .animated-text {
+      animation: typing 3s steps(40), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink-caret {
+      from,
+      to {
+        border-color: transparent;
+      }
+
+      50% {
+        border-color: #00FA9A; /* MediumSpringGreen color */
+      }
+    }
+
+    /* Add some crazy styles */
+    .crazy-background {
+      background: repeating-linear-gradient(45deg, #FFD700, #FFD700 10px, #00BFFF 10px, #00BFFF 20px);
+      height: 100vh;
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* Media Query for smaller screens */
+    @media only screen and (max-width: 600px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="crazy-background"></div>
+  <div class="container">
+    <h1>Maintenance Mode</h1>
+
+    <p><span class="animated-text">If you want to do maintenance of your car,</span></p>
+    <p><span class="animated-text">please visit your nearest store.</span></p>
+  </div>
+</body>
+
+</html>
